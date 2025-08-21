@@ -15,5 +15,10 @@ java -jar target/streamer-backend-0.1.0-SNAPSHOT.jar
 
 Docker Info:
 
-docker build -t streamer-docker . 
-docker run --net=host -p 8080:8080 streamer-docker
+docker build -t streamer-docker .
+
+//Short lived containers
+docker run --rm --net=host -p 8080:8080 streamer-docker
+OR
+//Want to use a previous container
+docker run --name streamer-docker --net=host -p 8080:8080 streamer-docker
