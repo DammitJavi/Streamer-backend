@@ -20,6 +20,7 @@ docker build -t streamer-docker .
 //Short lived containers
 
 docker run --rm --net=host -p 8080:8080 streamer-docker
+
 OR
 
 //Want to use a previous container
