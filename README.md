@@ -15,13 +15,25 @@ java -jar target/streamer-backend-0.1.0-SNAPSHOT.jar
 
 Docker Info:
 
+
+//Build 
 docker build -t streamer-docker .
 
 //Short lived containers
 
-docker run --rm --net=host -p 8080:8080 streamer-docker
+--rm = Automatically removes once exiting --it = Interactive terminal (you can interact with the shell).
+docker run --rm -it --net=host -p 8080:8080 streamer-docker
 
 OR
 
 //Want to use a previous container
 docker run --name streamer-docker --net=host -p 8080:8080 streamer-docker
+
+Clean up Docker:
+
+docker image prune
+
+or 
+
+//Deletes all stopped containers, unused volumes, and dangling images
+docker system prune

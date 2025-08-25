@@ -1,5 +1,5 @@
-FROM eclipse-temurin:21-jdk-alpine
-RUN addgroup -S streamer && adduser -S -D -G streamer streamer
+FROM eclipse-temurin:21-jdk
+RUN groupadd --system streamer && useradd --system --no-create-home --gid streamer streamer
 USER streamer:streamer
 ARG JAR_FILE=target/streamer-backend-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} cont-streamer.jar
